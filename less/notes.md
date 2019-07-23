@@ -33,5 +33,13 @@ less 与 more 类似，能够分页显示大文件。less不会一次把文件�
 * n -向后跳到下一个匹配到的行
 * N -向前跳到下一个匹配到的行
 ## jumping
+* g -go to first line in file
+* G -go to last line in file
+* line N -go to N line
+* m\<letter\> -Mark the current position with <letter>
+* '\<letter\> -go to a previously marked position
+## other
+* v -进入编辑模式（类似vim，之后的操作也与vim相同，如果要回到普通模式需要先退出vim）
+* V -在屏幕底端打印less版本号
 # examples
 1、

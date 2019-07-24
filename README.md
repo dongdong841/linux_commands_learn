@@ -1,2 +1,3 @@
 # linux_commands_learn
-姜皓到此一游
+linux 运维指令学习笔记、心得，方便日后查找
+## less

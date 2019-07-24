@@ -38,8 +38,67 @@ less 与 more 类似，能够分页显示大文件。less不会一次把文件�
 * line N -go to N line
 * m\<letter\> -Mark the current position with <letter>
 * '\<letter\> -go to a previously marked position
+## change files
+* :e [file] -打开一个新的文件
+* :n -切换到下一个已打开的文件
+* :p -切换到上一个已打开的文件
+* :x -切换到第一个已打开的文件
+* :d -从打开文件列表中将当前文件删除
+* = -显示当前文件名称
 ## other
 * v -进入编辑模式（类似vim，之后的操作也与vim相同，如果要回到普通模式需要先退出vim）
 * V -在屏幕底端打印less版本号
 # examples
-1、
+## 1、查看文件
+> less diff_file_1.cpp.bak
+```
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+        cout << "1" << endl;
+        cout << "1" << endl;
+        cout << "1" << endl;
+        cout << "1" << endl;
+        cout << "1" << endl;
+        cout << "1" << endl;
+        cout << "2" << endl;
+        cout << "2" << endl;
+        cout << "1" << endl;
+        cout << "1" << endl;
+        cout << "1" << endl;
+        cout << "1" << endl;
+        cout << "1" << endl;
+        cout << "1" << endl;
+        cout << "1" << endl;
+diff_file_1.cpp.bak
+```
+## 2、管道内容作为less输入
+> ps -ef | less
+```
+UID         PID   PPID  C STIME TTY          TIME CMD
+root          1      0  0 09:50 ?        00:00:03 /usr/lib/systemd/systemd --switched-root --system --deserialize 22
+root          2      0  0 09:50 ?        00:00:00 [kthreadd]
+root          3      2  0 09:50 ?        00:00:00 [ksoftirqd/0]
+root          5      2  0 09:50 ?        00:00:00 [kworker/0:0H]
+root          7      2  0 09:50 ?        00:00:00 [migration/0]
+root          8      2  0 09:50 ?        00:00:00 [rcu_bh]
+root          9      2  0 09:50 ?        00:00:00 [rcu_sched]
+root         10      2  0 09:50 ?        00:00:00 [lru-add-drain]
+root         11      2  0 09:50 ?        00:00:00 [watchdog/0]
+root         12      2  0 09:50 ?        00:00:00 [watchdog/1]
+root         13      2  0 09:50 ?        00:00:00 [migration/1]
+root         14      2  0 09:50 ?        00:00:00 [ksoftirqd/1]
+root         16      2  0 09:50 ?        00:00:00 [kworker/1:0H]
+root         18      2  0 09:50 ?        00:00:00 [kdevtmpfs]
+root         19      2  0 09:50 ?        00:00:00 [netns]
+root         20      2  0 09:50 ?        00:00:00 [khungtaskd]
+root         21      2  0 09:50 ?        00:00:00 [writeback]
+root         22      2  0 09:50 ?        00:00:00 [kintegrityd]
+root         23      2  0 09:50 ?        00:00:00 [bioset]
+:
+```
+## 3、浏览多个文件（不限于2个）
+> less diff_file_1.cpp diff_file_2.cpp

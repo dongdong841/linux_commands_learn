@@ -34,6 +34,7 @@ linux下的一款非常强大的文件编辑器
 ### jumplist
 * :jump 列出所有的访问点
 * ctrl+i 跳转到下一个访问点
+* ctrl+o 跳转到上一个访问点
 * n ctrl+i 向后跳转到第n个访问点
 * n ctrl+o 向前跳转到第n个访问点
 ### changelist

@@ -51,3 +51,40 @@ linux下的一款非常强大的文件编辑器
 * :.,.+100d 从当前行到当前行+100执行d命令
 * :.,'a d 从当前行到mark 'a，执行d命令
 * :.,\/regex\/d 从当前行到匹配行，执行d命令
+## 复制、删除、粘贴
+* yy、nyy、Y 复制当前行、从当前行开始复制n行（使用p粘贴时分别在目标行下面粘贴对应的复制行）
+* y 复制光标所选中的字符（可以通过v进行visual模式，选择要复制的连续字符串）
+* dd、ndd、D 删除当前行、从当前行开始删除n行
+* p、P 粘贴
+* [p、]p 左右增加缩进
+* gp、gP 复制后光标放在文本末尾而不是开头
+* yw、ynw 从光标处开始，复制一个word或复制n个word
+* dw、dnw 从光标处开始，删除一个word或删除n个word
+* y% 光标后面第一个括号中的内容
+## mark
+* a~z local mark
+* A~Z globle marks
+* :mark 显示所有mark
+* :'a,'b y复制a到b之间的字符
+* :.,'a d 删除当前行到标记b之间的内容
+* 'a \`a 跳到标记a（一个是跳到行位置，一个是跳到字符位置）
+* delmark a 删除标记a
+## 搜索
+* :set ignorecase 设置忽略大小写
+* /\csearch_str 忽略大小写搜索search_str
+* /\Csearch_str 区分大小写搜索search_str
+* \* # 向下搜索或向上搜索当前光标位置的word
+* /pattern 搜素pattern表达式
+* f* F* ; , 向后或向前搜素一个字符，";"继续向后搜素，","反向搜素
+## insert模式下的编辑命令
+* ctrl+w 向前删除一个单词
+* ctrl+u 向前删除到行首
+* ctrl+d ctrl+t 向右或向左整行进行shift动作
+## visual模式常用命令
+* v 进入visual模式，按字节选
+* V 进入visual line模式，按行选
+* ctrl+v 进入visual block模式，按块选
+* D,Y,C 删除highlight行，即使没有选全
+* d,y,c 只删除选取部分
+* J, j 将选取部分合成一行
+* \>, < 将选中的行向右、左移动shiftwidth字节
